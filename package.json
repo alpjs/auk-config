@@ -1,0 +1,35 @@
+{
+  "name": "auk-config",
+  "version": "1.0.0",
+  "description": "config in auk server",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "make tests",
+    "lint": "make lint",
+    "build": "make build",
+    "postpublish": "make post-publish",
+    "prepublish": "make pre-publish",
+    "preversion": "make pre-version",
+    "version": "make version",
+    "watch": "make watch"
+  },
+  "repository": "alpjs/auk-config",
+  "keywords": [
+    "alp",
+    "auk"
+  ],
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alpjs/auk-config/issues"
+  },
+  "homepage": "https://github.com/alpjs/auk-config#readme",
+  "devDependencies": {
+    "springbokjs-library": "^11.4.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.8.25",
+    "minimist": "^1.2.0",
+    "parse-json-object-as-map": "^1.0.1"
+  }
+}
