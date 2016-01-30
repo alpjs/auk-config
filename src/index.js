@@ -8,11 +8,11 @@ const argv = minimist(process.argv.slice(2));
 // Also makes Array, Map and Set read-only.
 function deepFreeze(obj) {
     if (obj instanceof Map) {
-        obj.clear = obj.delete = obj.set = function() {
+        obj.clear = obj.delete = obj.set = function () {
             throw new Error('map is read-only');
         };
     } else if (obj instanceof Set) {
-        obj.add = obj.clear = obj.delete = function() {
+        obj.add = obj.clear = obj.delete = function () {
             throw new Error('set is read-only');
         };
     }
@@ -31,11 +31,11 @@ function deepFreeze(obj) {
 }
 
 function existsConfig(dirname, name) {
-    return existsSync(dirname + name + '.json');
+    return existsSync(`${dirname}${name}.json`);
 }
 
 function loadConfig(dirname, name) {
-    let content = readFileSync(dirname + name + '.json');
+    let content = readFileSync(`${dirname}${name}.json`);
     return parseJSON(content);
 }
 
