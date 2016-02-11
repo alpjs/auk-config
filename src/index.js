@@ -39,8 +39,13 @@ function loadConfig(dirname, name) {
     return parseJSON(content);
 }
 
-export default function aukConfig(dirname) {
+export default function aukConfig(dirname, options = {}) {
     dirname = dirname.replace(/\/*$/, '/');
+
+    options = Object.assign({}, options, {
+        argv: [],
+    });
+
     return app => {
         app.existsConfig = (name) => existsConfig(dirname, name);
         app.loadConfig = (name) => loadConfig(dirname, name);
@@ -63,6 +68,12 @@ export default function aukConfig(dirname) {
             config.set('port', argv.port);
             config.delete('socketPath');
         }
+
+        options.argv.forEach(key => {
+            if (argv[key] !== undefined) {
+                config.set(key, argv[key]);
+            }
+        });
 
         app.config = config;
         app.context.config = config;
