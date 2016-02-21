@@ -61,6 +61,10 @@ export default function aukConfig(dirname, options = {}) {
             }
         }
 
+        if (!config.has('version')) {
+            config.set('version', argv.version || options.packageConfig.version);
+        }
+
         let socketPath = argv['socket-path'] || argv.socketPath;
         if (socketPath) {
             config.set('socketPath', socketPath);
