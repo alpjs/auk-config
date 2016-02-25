@@ -51,7 +51,7 @@ export default function aukConfig(dirname, options = {}) {
         app.loadConfig = (name) => loadConfig(dirname, name);
 
         const config = loadConfig(dirname, 'common');
-        for (let [key, value] of loadConfig(dirname, app.environment)) {
+        for (let [key, value] of loadConfig(dirname, app.env)) {
             config.set(key, value);
         }
 

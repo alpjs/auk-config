@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/alpjs/auk-config#readme",
   "devDependencies": {
-    "springbokjs-library": "^13.5.0"
+    "eslint": "^1.10.3",
+    "eslint-config-partridge": "^3.0.1",
+    "springbokjs-library": "^15.0.0"
   },
   "dependencies": {
     "minimist": "^1.2.0",
